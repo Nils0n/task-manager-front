@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import TaskItem from './components/TaskItem';
 
 function App() {
   const [tasks, setTasks] = useState([
@@ -17,7 +18,12 @@ function App() {
 
   return (
     <>
-
+      {tasks.map(task => (
+        <TaskItem
+          key={task.id}
+          task={task}
+        />
+      ))}
     </>
   )
 }
