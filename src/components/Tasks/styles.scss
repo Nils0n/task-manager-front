@@ -18,6 +18,10 @@
         overflow-y: hidden;
         display: flex;
         flex-direction: column;
+
+        h3 {
+            margin-bottom: 1.125rem;
+        }
     }
 
     .completed-tasks {

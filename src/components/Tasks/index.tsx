@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import api from "../../services/api";
+import AddTask from "../AddTask";
 import TaskItem from "../TaskItem";
 import "./styles.scss";
 
@@ -37,6 +38,7 @@ export default function Tasks() {
             <h2>Minhas Tarefas</h2>
             <div className="last-tasks">
                 <h3>Últimas tarefas</h3>
+                <AddTask />
                 <div className="tasks-list">
                     {tasks.filter(task => task.isCompleted === false).map(lasTask => (
                         <TaskItem
