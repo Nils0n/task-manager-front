@@ -23,7 +23,6 @@ export default function CustomInput({ label, value, onChange }: CustomInputParam
                     {label}
                 </label>
             )}
-            {value}
         </div>
     )
 }
