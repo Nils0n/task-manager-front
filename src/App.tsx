@@ -1,6 +1,7 @@
-import { useState } from 'react'
-import './App.css'
+import { useEffect, useState } from 'react'
 import TaskItem from './components/TaskItem';
+import api from './services/api';
+import './App.css'
 
 function App() {
   const [tasks, setTasks] = useState([
@@ -15,6 +16,22 @@ function App() {
       isCompleted: true
     },
   ]);
+
+
+  useEffect(() => {
+
+    const fetchTasks = async () => {
+      try {
+        const { data } = await api.get('tasks');
+        setTasks(data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    fetchTasks();
+
+  }, []);
 
   return (
     <>
