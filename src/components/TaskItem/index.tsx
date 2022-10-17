@@ -7,7 +7,6 @@ type TaskItemParams = {
         description: string,
         isCompleted: boolean
     }
-
 }
 
 export default function TaskItem({ task }: TaskItemParams) {
