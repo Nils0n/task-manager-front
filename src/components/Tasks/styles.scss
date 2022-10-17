@@ -13,6 +13,34 @@
         font-size: 1.125rem;
     }
 
+    /* width */
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(262.71deg,
+                #00d1ff -30.04%,
+                #00ffa3 124.74%);
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+    .tasks-list {
+        overflow-y: auto;
+        margin-top: 28px;
+    }
+
+
     .last-tasks {
         flex: 1;
         overflow-y: hidden;
@@ -34,7 +62,7 @@
 
     .tasks-list {
         margin-top: 1.75rem;
-        overflow-y: auto;
+        overflow-y: scroll;
     }
 
 }
