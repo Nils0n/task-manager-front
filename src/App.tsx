@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import TaskItem from './components/TaskItem';
 import api from './services/api';
-import './App.css'
 
 function App() {
   const [tasks, setTasks] = useState([
@@ -23,7 +22,7 @@ function App() {
     const fetchTasks = async () => {
       try {
         const { data } = await api.get('tasks');
-        setTasks(data);
+        // setTasks(data);
       } catch (error) {
         console.log(error);
       }
