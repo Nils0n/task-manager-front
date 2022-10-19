@@ -33,6 +33,11 @@ export default function AddTask({ fetchTasks }: AddTaskParams) {
             await api.post('tasks/', { description: task, isCompleted: false });
             setTask("");
             await fetchTasks();
+            toast.success("Tarefa adicionada com sucesso!", {
+                position: "top-center",
+                autoClose: 1500,
+                theme: "dark",
+            });
 
         } catch (error) {
 
