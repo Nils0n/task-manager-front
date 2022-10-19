@@ -5,7 +5,7 @@ import TaskItem from "../TaskItem";
 import "./styles.scss";
 
 type TaskItemParams = {
-    id: number,
+    _id: number,
     description: string,
     isCompleted: boolean
 
@@ -41,7 +41,7 @@ export default function Tasks() {
                     {tasks && (
                         tasks.filter(task => task.isCompleted === false).map(lasTask => (
                             <TaskItem
-                                key={lasTask.description}
+                                key={lasTask._id}
                                 task={lasTask}
                             />
                         ))
@@ -55,7 +55,7 @@ export default function Tasks() {
                     {tasks && (
                         tasks.filter(task => task.isCompleted).map(completedTask => (
                             <TaskItem
-                                key={completedTask.description}
+                                key={completedTask._id}
                                 task={completedTask}
                             />
                         ))
