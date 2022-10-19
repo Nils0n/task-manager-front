@@ -1,15 +1,26 @@
-import "./styles.scss";
 import { AiFillDelete } from "react-icons/ai";
+import api from "../../services/api";
+import "./styles.scss";
 
 type TaskItemParams = {
     task: {
-        id: number,
+        _id: number,
         description: string,
         isCompleted: boolean
     }
 }
 
 export default function TaskItem({ task }: TaskItemParams) {
+    const handleTaskDeletion = async () => {
+        try {
+            await api.delete(`tasks/${task._id}`);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+
+
     return (
         <div className="task-item-container">
             <div className="task-description">
@@ -32,7 +43,7 @@ export default function TaskItem({ task }: TaskItemParams) {
                     </span>
                 </label>
             </div>
-            <div className="delete">
+            <div className="delete" onClick={handleTaskDeletion}>
                 <AiFillDelete size={18} color="#F97474" />
             </div>
         </div>
