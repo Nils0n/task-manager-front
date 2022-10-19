@@ -24,7 +24,7 @@ export default function AddTask({ fetchTasks }: AddTaskParams) {
                 toast.warning("A tarefa precisa de uma descrição para ser adicionada", {
                     position: "top-center",
                     autoClose: 1500,
-                    theme: "dark",
+                    theme: "colored",
                 });
 
                 return;
@@ -36,7 +36,7 @@ export default function AddTask({ fetchTasks }: AddTaskParams) {
             toast.success("Tarefa adicionada com sucesso!", {
                 position: "top-center",
                 autoClose: 1500,
-                theme: "dark",
+                theme: "colored",
             });
 
         } catch (error) {
