@@ -1,4 +1,5 @@
 import { AiFillDelete } from "react-icons/ai";
+import { toast } from "react-toastify";
 import api from "../../services/api";
 import "./styles.scss";
 
@@ -7,14 +8,27 @@ type TaskItemParams = {
         _id: number,
         description: string,
         isCompleted: boolean
-    }
+    };
+
+    fetchTasks: () => Promise<void>;
 }
 
-export default function TaskItem({ task }: TaskItemParams) {
+export default function TaskItem({ task, fetchTasks }: TaskItemParams) {
     const handleTaskDeletion = async () => {
         try {
             await api.delete(`tasks/${task._id}`);
+            await fetchTasks();
+            toast.success("Tarefa excluida com sucesso", {
+                position: "top-center",
+                autoClose: 1500,
+                theme: "colored",
+            });
         } catch (error) {
+            toast.error("Error ao tentar deletar!", {
+                position: "top-center",
+                autoClose: 1500,
+                theme: "colored",
+            });
             console.log(error);
         }
     }

@@ -25,10 +25,9 @@ export default function Tasks() {
 
 
     useEffect(() => {
-
         fetchTasks();
-
     }, []);
+
     return (
         <div className="tasks-container">
             <h2>Minhas Tarefas</h2>
@@ -43,6 +42,7 @@ export default function Tasks() {
                             <TaskItem
                                 key={lasTask._id}
                                 task={lasTask}
+                                fetchTasks={fetchTasks}
                             />
                         ))
                     )}
@@ -57,6 +57,7 @@ export default function Tasks() {
                             <TaskItem
                                 key={completedTask._id}
                                 task={completedTask}
+                                fetchTasks={fetchTasks}
                             />
                         ))
                     )}
