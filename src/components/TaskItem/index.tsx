@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from "react";
+import React from "react";
 import { AiFillDelete } from "react-icons/ai";
 import { toast } from "react-toastify";
 import api from "../../services/api";
