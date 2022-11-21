@@ -50,6 +50,7 @@ export default function AddTask({ fetchTasks }: AddTaskParams) {
                 label="Adicionar tarefa..."
                 value={task}
                 onChange={onChange}
+                onEnterPress={handleTaskAddtion}
             />
             <CustomButton onClick={handleTaskAddtion}>
                 <FaPlus size={14} color="#ffffff" />
