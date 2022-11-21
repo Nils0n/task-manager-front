@@ -5,7 +5,7 @@ import logo from '../../assets/images/logo.png';
 
 export default function SideBar() {
     return (
-        <div className="side-bar-container">
+        <div className="sidebar-container">
             <div className="logo">
                 <img src={logo} alt="ReactPro" />
             </div>
