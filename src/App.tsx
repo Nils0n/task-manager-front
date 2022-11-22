@@ -1,19 +1,17 @@
-import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import { Routes, Route } from "react-router-dom";
 
-import './index.scss';
-import SideBar from "./components/SideBar";
-import Tasks from './components/Tasks';
+import Home from "./pages/Home";
+
+import "./index.scss";
+
 
 function App() {
 
 
   return (
-    <div className="app-container">
-      <SideBar />
-      <Tasks />
-      <ToastContainer />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+    </Routes>
   )
 }
 
