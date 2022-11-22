@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import api from "../../services/api";
 import AddTask from "../AddTask";
 import TaskItem from "../TaskItem";
@@ -23,6 +23,13 @@ export default function Tasks() {
         }
     }
 
+    const lastTasks = useMemo(() => {
+        return tasks?.filter(task => task.isCompleted === false);
+    }, [tasks]);
+
+    const completedTasks = useMemo(() => {
+        return tasks?.filter(task => task.isCompleted === true);
+    }, [tasks]);
 
     useEffect(() => {
         fetchTasks();
@@ -37,30 +44,30 @@ export default function Tasks() {
 
 
                 <div className="tasks-list">
-                    {tasks && (
-                        tasks.filter(task => task.isCompleted === false).map(lasTask => (
+                    {
+                        lastTasks?.map(lasTask => (
                             <TaskItem
                                 key={lasTask._id}
                                 task={lasTask}
                                 fetchTasks={fetchTasks}
                             />
                         ))
-                    )}
+                    }
                 </div>
             </div>
             <div className="completed-tasks">
                 <h3>Tarefas Concluídas</h3>
 
                 <div className="tasks-list">
-                    {tasks && (
-                        tasks.filter(task => task.isCompleted).map(completedTask => (
+                    {
+                        completedTasks?.map(completedTask => (
                             <TaskItem
                                 key={completedTask._id}
                                 task={completedTask}
                                 fetchTasks={fetchTasks}
                             />
                         ))
-                    )}
+                    }
                 </div>
             </div>
         </div>
