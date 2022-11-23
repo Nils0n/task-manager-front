@@ -1,4 +1,5 @@
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, useCallback } from "react";
+import { toast } from "react-toastify";
 import api from "../../services/api";
 import AddTask from "../AddTask";
 import TaskItem from "../TaskItem";
@@ -14,14 +15,19 @@ type TaskItemParams = {
 export default function Tasks() {
     const [tasks, setTasks] = useState<TaskItemParams[]>();
 
-    const fetchTasks = async () => {
+    const fetchTasks = useCallback(async () => {
         try {
             const { data } = await api.get('tasks');
             setTasks(data);
         } catch (error) {
             console.log(error);
+            toast.error("Error ao tentar deletar!", {
+                position: "top-center",
+                autoClose: 1500,
+                theme: "colored",
+            });
         }
-    }
+    }, []);
 
     const lastTasks = useMemo(() => {
         return tasks?.filter(task => task.isCompleted === false);
