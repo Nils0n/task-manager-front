@@ -1,13 +1,13 @@
-import SideBar from "../../components/SideBar";
-import Tasks from "../../components/Tasks";
+import SideBar from '../../components/SideBar';
+import Tasks from '../../components/Tasks';
 
-import "./styles.scss";
+import './styles.scss';
 
 export default function Home() {
-    return (
-        <div className="home-container">
-            <SideBar />
-            <Tasks />
-        </div>
-    )
+  return (
+    <div className="home-container">
+      <SideBar />
+      <Tasks />
+    </div>
+  );
 }

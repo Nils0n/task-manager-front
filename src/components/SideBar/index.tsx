@@ -5,20 +5,20 @@ import logo from '../../assets/images/logo.png';
 import { useNavigate } from 'react-router-dom';
 
 export default function SideBar() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    return (
-        <div className="sidebar-container">
-            <div className="logo">
-                <img src={logo} alt="ReactPro" />
-            </div>
-            <div className="sign-out">
-                <CustomButton
-                    onClick={() => navigate('/login')}
-                >
+  return (
+    <div className="sidebar-container">
+      <div className="logo">
+        <img src={logo} alt="ReactPro" />
+      </div>
+      <div className="sign-out">
+        <CustomButton
+          onClick={() => navigate('/login')}
+        >
                     Sair
-                </CustomButton>
-            </div>
-        </div>
-    )
+        </CustomButton>
+      </div>
+    </div>
+  );
 }

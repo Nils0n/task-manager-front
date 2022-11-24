@@ -1,9 +1,9 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from 'react-router-dom';
 
-import Home from "./pages/Home";
-import Login from "./pages/Login";
+import Home from './pages/Home';
+import Login from './pages/Login';
 
-import "./index.scss";
+import './index.scss';
 
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
     </Routes>
-  )
+  );
 }
 
-export default App
+export default App;
